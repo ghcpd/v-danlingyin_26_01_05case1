@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "total_issues": 3,
+    "high": 2,
+    "medium": 1,
+    "low": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "Options - level default",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Documentation states the default level is 'debug'",
+      "new_behavior": "Code sets default level to 'info' (line 13: const level = options?.level ?? \"info\")",
+      "fix_summary": "Updated default value from 'debug' to 'info' in README.md"
+    },
+    {
+      "id": 2,
+      "doc_file": "README.md",
+      "section": "Options - json default",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Documentation states the default json value is false",
+      "new_behavior": "Code sets default json to true (line 14: const json = options?.json ?? true)",
+      "fix_summary": "Updated default value from false to true in README.md"
+    },
+    {
+      "id": 3,
+      "doc_file": "README.md",
+      "section": "Options - level type",
+      "issue_type": "Outdated Documentation",
+      "severity": "Medium",
+      "old_behavior": "Documentation describes level as generic 'string' type",
+      "new_behavior": "Code defines level as union type: \"info\" | \"warn\" | \"error\" (interface LoggerOptions, line 4)",
+      "fix_summary": "Updated type specification from 'string' to '\"info\" | \"warn\" | \"error\"' in README.md"
+    }
+  ]
+}
