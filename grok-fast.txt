@@ -1,0 +1,151 @@
+grok-fast   ：：
+
+User: Prompt
+You are a senior technical writer and software engineer.
+Your task is to review the provided project files and identify outdated documentation, where the documentation no longer matches the actual behavior of the code.
+--------------------------------------------------------------------------------
+Your Responsibilities:
+1.Identify outdated documentation
+- Scan all provided documentation files (e.g. README.md, docs/*.md)
+- Compare documented behavior with actual implementation in source code
+- Identify mismatches between:
+- Configuration options
+- Function parameters
+- Default values
+- Return structures
+- Runtime behavior
+For each issue, provide:
+- Documentation file name
+- Section or heading
+- Description of the outdated behavior
+- Description of the actual (current) behavior
+--------------------------------------------------------------------------------
+2.Classify each issue For every mismatch, classify:
+- Issue type: Outdated Documentation
+- Severity:
+- High: Causes incorrect usage or runtime failure
+- Medium: Causes confusion or wrong assumptions
+- Low: Minor inconsistency or naming mismatch
+--------------------------------------------------------------------------------
+3.Produce comparison evidence (Old vs New behavior)
+For each issue, generate:
+Old Behavior (as documented):
+- ...
+New Behavior (actual code behavior):
+- ...
+--------------------------------------------------------------------------------
+4.Update documentation Produce:
+- README_backup.md → unchanged copy of the original documentation
+- README.md → fully updated documentation that matches current behavior
+Rules:
+- Do NOT change any code
+- Only update documentation
+- Do NOT invent new features
+- Updated documentation must be accurate and minimal
+--------------------------------------------------------------------------------
+5.Generate a documentation audit report (report.json)
+{
+  "summary": {
+    "total_issues": 0,
+    "high": 0,
+    "medium": 0,
+    "low": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "",
+      "issue_type": "Outdated Documentation",
+      "severity": "",
+      "old_behavior": "",
+      "new_behavior": "",
+      "fix_summary": ""
+    }
+  ]
+}
+
+--------------------------------------------------------------------------------
+6.Generate validation evidence Produce a file named doc_validation.md containing:
+- Explanation of how documentation now matches the code
+- Clear mapping between:
+- Code behavior
+- Updated documentation statements
+--------------------------------------------------------------------------------
+7.Generate reviewer guide Produce AUDIT_README.md explaining:
+- What was reviewed
+- What mismatches were found
+- What files were generated
+- How reviewers can verify correctness
+--------------------------------------------------------------------------------
+📌 Rules for the Model
+- MUST NOT hallucinate behavior not present in code
+- MUST NOT invent files that do not exist
+- MUST clearly show old vs new behavior
+- MUST keep code unchanged
+- MUST base conclusions strictly on provided files
+- MUST keep output structured and readable
+
+GitHub Copilot: I'll analyze the documentation against the code and identify all mismatches, then generate the required files. 
+
+Created 6 todos
+
+## Analysis Complete
+
+I've identified **3 critical mismatches** between the documentation and the actual code:
+
+### Issues Found:
+
+1. **Level default value**: README says `"debug"` but code uses `"info"` (**HIGH severity**)
+2. **JSON default value**: README says `false` but code uses `true` (**HIGH severity**)
+3. **Level type specification**: README says generic `string` but code restricts to `"info" | "warn" | "error"` (**MEDIUM severity**)
+
+Now I'll create all required files: 
+
+Starting: *Create README_backup.md* (2/6)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/26.1/1.5/case1/grok-fast/README_backup.md)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/26.1/1.5/case1/grok-fast/README.md)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/26.1/1.5/case1/grok-fast/report.json)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/26.1/1.5/case1/grok-fast/doc_validation.md)
+
+Created [](file:///c%3A/Users/v-danlingyin/Documents/microsoft_projects_files/bugBash/26.1/1.5/case1/grok-fast/AUDIT_README.md)
+
+Using "Replace String in File"
+
+
+```
+
+```
+
+
+Completed: *Create README_backup.md* (2/6)
+
+## ✅ Documentation Audit Complete
+
+I've successfully completed the comprehensive documentation audit. Here's what was delivered:
+
+### 📋 Issues Identified: 3 (2 High, 1 Medium)
+
+1. **Level default mismatch** (HIGH): Documented as `"debug"`, actually `"info"`
+2. **JSON default mismatch** (HIGH): Documented as `false`, actually `true`
+3. **Level type incomplete** (MEDIUM): Documented as `string`, actually `"info" | "warn" | "error"`
+
+### 📁 Files Generated:
+
+1. **README_backup.md** - Original documentation preserved
+2. **README.md** - Updated with correct defaults and types
+3. **report.json** - Structured audit report with all findings
+4. **doc_validation.md** - Evidence proving documentation accuracy
+5. **AUDIT_README.md** - Complete reviewer guide
+
+### ✓ Verification:
+- No code was modified (input.ts remains unchanged)
+- All fixes based strictly on actual code behavior
+- Documentation now accurately reflects implementation
+- Old vs new behavior clearly documented for each issue
+
+Made changes.
