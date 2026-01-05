@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "total_issues": 3,
+    "high": 2,
+    "medium": 0,
+    "low": 1
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "Options → level",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Documentation states `level` default is \"debug\" and shows `level` as a generic string.",
+      "new_behavior": "Code defines `level?: \"info\" | \"warn\" | \"error\"` and default `level` is `\"info\"`.",
+      "fix_summary": "Updated `README.md` to list allowed `level` values and set default to `\"info\"`; removed `debug` from examples."
+    },
+    {
+      "id": 2,
+      "doc_file": "README.md",
+      "section": "Options → json",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Documentation states `json` default is false (plain-text output by default).",
+      "new_behavior": "Code sets `json` default to true, so output is JSON by default.",
+      "fix_summary": "Updated `README.md` to indicate `json` default is `true` and added examples for both JSON and plain-text output."
+    },
+    {
+      "id": 3,
+      "doc_file": "README.md",
+      "section": "Usage / Examples",
+      "issue_type": "Outdated Documentation",
+      "severity": "Low",
+      "old_behavior": "Example shows `level: \"debug\"` and does not show the actual output format.",
+      "new_behavior": "Examples now use supported `level` values and show exact output for both `json` and `json: false`.",
+      "fix_summary": "Replaced the invalid `debug` example and added explicit output examples to remove ambiguity."
+    }
+  ]
+}
