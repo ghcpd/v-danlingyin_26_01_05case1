@@ -1,0 +1,50 @@
+{
+  "summary": {
+    "total_issues": 4,
+    "high": 2,
+    "medium": 1,
+    "low": 1
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "Options - level",
+      "issue_type": "Outdated Documentation",
+      "severity": "high",
+      "old_behavior": "level: string (any string accepted, default \"debug\")",
+      "new_behavior": "level: \"info\" | \"warn\" | \"error\" (only these three values allowed, default \"info\")",
+      "fix_summary": "Updated type annotation to reflect actual type constraint and corrected default value from \"debug\" to \"info\""
+    },
+    {
+      "id": 2,
+      "doc_file": "README.md",
+      "section": "Options - json",
+      "issue_type": "Outdated Documentation",
+      "severity": "high",
+      "old_behavior": "json: boolean, Default: false",
+      "new_behavior": "json: boolean, Default: true",
+      "fix_summary": "Corrected default value from false to true to match actual implementation"
+    },
+    {
+      "id": 3,
+      "doc_file": "README.md",
+      "section": "Usage",
+      "issue_type": "Outdated Documentation",
+      "severity": "medium",
+      "old_behavior": "No output examples shown; implicit assumption that logger.log() outputs plain text",
+      "new_behavior": "log() method outputs JSON formatted string when json: true (default), or formatted string when json: false",
+      "fix_summary": "Added output examples demonstrating both JSON and plain text formatting based on options"
+    },
+    {
+      "id": 4,
+      "doc_file": "README.md",
+      "section": "Missing section",
+      "issue_type": "Outdated Documentation",
+      "severity": "low",
+      "old_behavior": "No documentation of return value structure",
+      "new_behavior": "Returns object with log(message: string) method",
+      "fix_summary": "Added Return Value section documenting the method signature"
+    }
+  ]
+}
