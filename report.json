@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "total_issues": 2,
+    "high": 1,
+    "medium": 1,
+    "low": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "Options - level",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Documented level as string with default \"debug\"; usage example uses level: \"debug\".",
+      "new_behavior": "Code expects level of \"info\" | \"warn\" | \"error\" with default \"info\".",
+      "fix_summary": "Updated README to list allowed level values and correct default; usage example now uses a valid level."
+    },
+    {
+      "id": 2,
+      "doc_file": "README.md",
+      "section": "Options - json",
+      "issue_type": "Outdated Documentation",
+      "severity": "Medium",
+      "old_behavior": "Documented json default as false.",
+      "new_behavior": "Code defaults json to true and logs JSON stringified output when enabled.",
+      "fix_summary": "Updated README to reflect json default true and describe output formats."
+    }
+  ]
+}
