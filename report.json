@@ -1,0 +1,40 @@
+{
+  "summary": {
+    "total_issues": 3,
+    "high": 2,
+    "medium": 1,
+    "low": 0
+  },
+  "details": [
+    {
+      "id": 1,
+      "doc_file": "README.md",
+      "section": "Options — level / Usage example",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "Default level documented as \"debug\" and example shows `level: \"debug\"`.",
+      "new_behavior": "Code's `LoggerOptions.level` accepts only `\"info\" | \"warn\" | \"error\"` and default is `\"info\"`.",
+      "fix_summary": "Updated README to list allowed values (`info`, `warn`, `error`) and changed default to `info`; replaced usage example to use a supported level."
+    },
+    {
+      "id": 2,
+      "doc_file": "README.md",
+      "section": "Options — json",
+      "issue_type": "Outdated Documentation",
+      "severity": "High",
+      "old_behavior": "`json` default documented as `false`.",
+      "new_behavior": "Code sets `json` default to `true` (logs JSON by default).",
+      "fix_summary": "Updated README to indicate `json` default is `true` and described the output formats for both `true` and `false`."
+    },
+    {
+      "id": 3,
+      "doc_file": "README.md",
+      "section": "Options — level type",
+      "issue_type": "Outdated Documentation",
+      "severity": "Medium",
+      "old_behavior": "`level` documented generically as `string`.",
+      "new_behavior": "Code's type restricts `level` to the union `\"info\" | \"warn\" | \"error\"`.",
+      "fix_summary": "Clarified allowed `level` values in the README to match the `LoggerOptions` interface."
+    }
+  ]
+}
